@@ -105,7 +105,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-userdebug || lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng
-        mka shrp -j$(nproc --all)
+        mka recoveryimage -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Публикация готовой сборки в Релизы
